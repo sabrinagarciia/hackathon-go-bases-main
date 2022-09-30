@@ -50,7 +50,18 @@ func (b *bookings) Read(id int) (Ticket, error) {
 }
 
 func (b *bookings) Update(id int, t Ticket) (Ticket, error) {
-	return Ticket{}, nil
+	if t.Id != id {
+		return Ticket{}, errors.New("no se ingreso el id correspondiente al ticket")
+	}
+
+	for i, value := range b.Tickets {
+		if value.Id == id {
+			b.Tickets[i] = t
+			return t, nil
+		}
+	}
+
+	return Ticket{}, errors.New("no existe")
 }
 
 func (b *bookings) Delete(id int) (int, error) {
