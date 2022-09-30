@@ -3,8 +3,8 @@ package file
 import (
 	"encoding/csv"
 	"os"
-	"io"
-	"github.com/sabrinagarciia/hackathon-go-bases-main/internal/service"
+
+	"github.com/bootcamp-go/hackaton-go-bases/internal/service"
 )
 
 type File struct {
@@ -29,8 +29,7 @@ func (f *File) Read() ([]service.Ticket, error) {
 		}
 		for _, record := range records {
 			ticket := service.Ticket {
-				Names: record[1],
-
+				Names: record[0],
 			}
 		}
 	}
