@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"os"
 
-	"github.com/bootcamp-go/hackaton-go-bases/internal/service"
+	"github.com/sabrinagarciia/hackathon-go-bases-main/internal/service"
 )
 
 type File struct {
